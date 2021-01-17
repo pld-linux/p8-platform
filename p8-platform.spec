@@ -1,11 +1,11 @@
 Summary:	Platform support library used by libCEC and binary add-ons for Kodi
-Name:		platform
+Name:		p8-platform
 Version:	2.1.0.1
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 URL:		https://github.com/Pulse-Eight/platform/
-Source0:	https://github.com/Pulse-Eight/platform/archive/p8-%{name}-%{version}.tar.gz
+Source0:	https://github.com/Pulse-Eight/platform/archive/%{name}-%{version}.tar.gz
 # Source0-md5:	3b9b00b7e0bb43532518741c1e30a2d7
 BuildRequires:	cmake
 BuildRequires:	libstdc++-devel
@@ -24,7 +24,7 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%setup -q -n %{name}-p8-%{name}-%{version}
+%setup -q -n platform-p8-platform-%{version}
 
 %build
 install -d build
@@ -48,12 +48,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.md
-%attr(755,root,root) %{_libdir}/libp8-%{name}.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libp8-%{name}.so.2
+%attr(755,root,root) %{_libdir}/lib%{name}.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/lib%{name}.so.2
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/p8-%{name}
-%attr(755,root,root) %{_libdir}/libp8-%{name}.so
-%{_libdir}/p8-%{name}
-%{_pkgconfigdir}/p8-%{name}.pc
+%{_includedir}/%{name}
+%attr(755,root,root) %{_libdir}/lib%{name}.so
+%{_libdir}/%{name}
+%{_pkgconfigdir}/%{name}.pc
