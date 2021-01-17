@@ -3,6 +3,7 @@ Name:		platform
 Version:	2.1.0.1
 Release:	1
 License:	GPL v2+
+Group:		Libraries
 URL:		https://github.com/Pulse-Eight/platform/
 Source0:	https://github.com/Pulse-Eight/platform/archive/p8-%{name}-%{version}.tar.gz
 # Source0-md5:	3b9b00b7e0bb43532518741c1e30a2d7
@@ -14,6 +15,7 @@ Platform support library used by libCEC and binary add-ons for Kodi.
 
 %package devel
 Summary:	Development files for %{name}
+Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	cmake
 
